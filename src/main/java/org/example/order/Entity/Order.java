@@ -3,14 +3,14 @@ package org.example.order.Entity;
 public class Order {
 
     enum OrderStatus {결제_완료, 상품_준비_중, 배송_중, 배송_완료, 구매_확정, 환불_신청, 환불_환료, 교환_신청, 교환_완료}
-    int orderID;    //주문 번호
-    int userNum;    //고객 번호
-    int paymentID;  //주문 결제 번호
-    String orderName;   //상품 이름
-    String orderDate;   //주문 일자
-    OrderStatus orderStatus;   //결제 상태
-    String storeName;   //판매자 이름
-    String storePhone;  //판매자 전화번호
+    private int orderID;    //주문 번호
+    private int userNum;    //고객 번호
+    private int paymentID;  //주문 결제 번호
+    private String orderName;   //상품 이름
+    private String orderDate;   //주문 일자
+    private OrderStatus orderStatus;   //결제 상태
+    private String storeName;   //판매자 이름
+    private String storePhone;  //판매자 전화번호
 
     public int getOrderID() {
         return orderID;
