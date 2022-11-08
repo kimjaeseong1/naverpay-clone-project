@@ -10,13 +10,13 @@ public class OrderDTO {
     private int paymentID;  //주문 결제 번호
     private String orderName;   //상품 이름
     private String orderDate;   //주문 일자
-    private OrderStatus orderStatus;   //결제 상태
+    private String orderStatus;   //결제 상태
     private String storeName;   //판매자 이름
     private String storePhone;  //판매자 전화번호
 
     public OrderDTO() {}
 
-    public OrderDTO(int orderID, int userNum, int paymentID, String orderName, String orderDate, OrderStatus orderStatus, String storeName, String storePhone) {
+    public OrderDTO(int orderID, int userNum, int paymentID, String orderName, String orderDate, String orderStatus, String storeName, String storePhone) {
         this.orderID = orderID;
         this.userNum = userNum;
         this.paymentID = paymentID;
@@ -75,11 +75,11 @@ public class OrderDTO {
         this.orderDate = orderDate;
     }
 
-    public OrderStatus getOrderStatus() {
+    public String getOrderStatus() {
         return orderStatus;
     }
 
-    public void setOrderStatus(OrderStatus orderStatus) {
+    public void setOrderStatus(String orderStatus) {
         this.orderStatus = orderStatus;
     }
 
