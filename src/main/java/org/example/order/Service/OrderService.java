@@ -19,8 +19,8 @@ public class OrderService implements IOrderService{
         calendar1.setTime(new Date());
         calendar2.setTime(new Date());
         calendar2.add(calendar2.DATE, period);
-        String startDate = calendar1.get(Calendar.YEAR) + " - " + calendar1.get(Calendar.MONTH) + " - " + calendar1.get(Calendar.DATE);
-        String endDate = calendar2.get(Calendar.YEAR) + " - " + calendar2.get(Calendar.MONTH) + " - " + calendar2.get(Calendar.DATE);;
+        String startDate = calendar1.get(Calendar.YEAR) + "-" + (int)(calendar1.get(Calendar.MONTH) + 1) + "-" + calendar1.get(Calendar.DATE);
+        String endDate = calendar2.get(Calendar.YEAR) + "-" + (int)(calendar2.get(Calendar.MONTH) + 1) + "-" + calendar2.get(Calendar.DATE);;
         return OrderDAO.getInstance().getPeriodList(userNum, startDate, endDate);
     }
 
