@@ -55,9 +55,4 @@ public class SessionMgr {
         }
         session.invalidate();
     }
-
-
-
-
-
 }
