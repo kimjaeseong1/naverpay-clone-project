@@ -75,17 +75,19 @@ public class OrderDAO implements IOrderDAO{
             stmt.setString(2, startDate);
             stmt.setString(3, endDate);
             rs = stmt.executeQuery();
+            String q = stmt.toString();
             while (rs.next()) {
 
                 //TODO : 자료형 맞게 가져와서 Order의 생성자에 넣어주세요.
-
-                /* 예시)
-                String mId = rs.getString("uId");
-                String uPw = rs.getString("uPw");
-                String uEmail = rs.getString("uEmail");
-
-                orderList.add(new Member(mId, uPw, uEmail));
-                */
+                int OrderID = rs.getInt("ORDERID");
+                int usernum = rs.getInt("USERNUM");
+                int paymentID = rs.getInt("PAYMENTID");
+                String orderName = rs.getString("ORDERNAME");
+                String orderDate = rs.getString("ORDERDATE");
+                String orderStatus = rs.getString("ORDERSTATUS");
+                String storeName = rs.getString("STORENAME");
+                String storePhone = rs.getString("STOREPHONE");
+                orderList.add(new Order(OrderID, usernum, paymentID, orderName, orderDate, orderStatus, storeName, storePhone));
             }
         } catch(SQLException e){
             e.printStackTrace();
