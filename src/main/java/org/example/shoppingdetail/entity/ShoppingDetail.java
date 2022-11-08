@@ -1,6 +1,7 @@
 package org.example.shoppingdetail.entity;
 
 import org.example.order.Entity.OrderStatus;
+import org.example.shoppingdetail.dto.ShoppingDetailDTO;
 
 public class ShoppingDetail {
 
@@ -19,7 +20,7 @@ public class ShoppingDetail {
     public ShoppingDetail() {
     }
 
-    public ShoppingDetail(int paymentId, String orderName, int orderCount, String orderDate, String storeName, String storePhone, PaymentMethod paymentMethod, int productPrice, int deliveryPrice, int totalPrice) {
+    public ShoppingDetail(int paymentId, String orderName, int orderCount, String orderDate, String storeName, String storePhone, PaymentMethod paymentMethod, OrderStatus orderStatus, int productPrice, int deliveryPrice, int totalPrice) {
         this.paymentId = paymentId;
         this.orderName = orderName;
         this.orderCount = orderCount;
@@ -27,9 +28,14 @@ public class ShoppingDetail {
         this.storeName = storeName;
         this.storePhone = storePhone;
         this.paymentMethod = paymentMethod;
+        this.orderStatus = orderStatus;
         this.productPrice = productPrice;
         this.deliveryPrice = deliveryPrice;
         this.totalPrice = totalPrice;
+    }
+
+    public ShoppingDetailDTO toDTO() {
+        return new ShoppingDetailDTO(paymentId, orderName, orderCount, orderDate, storeName, storePhone, paymentMethod, orderStatus, productPrice, deliveryPrice, totalPrice);
     }
 
     /**
