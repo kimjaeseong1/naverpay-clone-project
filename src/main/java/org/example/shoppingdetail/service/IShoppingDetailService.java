@@ -1,10 +1,10 @@
 package org.example.shoppingdetail.service;
 
-import org.example.shoppingdetail.entity.ShoppingDetail;
+import org.example.shoppingdetail.dto.ShoppingDetailDTO;
 
 public interface IShoppingDetailService {
 
-    ShoppingDetail getShoppingDetailByPaymentId(int id);
+    ShoppingDetailDTO getShoppingDetailByPaymentId(int id);
 
-    int deleteShoppingDetailByPaymentId(int id);
+    boolean deleteShoppingDetailByPaymentId(int id);
 }
