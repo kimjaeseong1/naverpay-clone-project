@@ -1,4 +1,4 @@
-package org.example.shoppingdetail.database;
+package org.example.database;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
