@@ -76,11 +76,11 @@ public class CookieMgr {
                 }
             }
         }
-        return null;
+         return null;
     }
 
     public void set(HttpServletRequest request, HttpServletResponse response,String name , String value){
-        Cookie[] cookies = request.getCookies();
+         Cookie[] cookies = request.getCookies();
 
         if(cookies != null){
             for(Cookie cookie : cookies){
