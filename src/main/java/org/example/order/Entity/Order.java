@@ -1,8 +1,10 @@
 package org.example.order.Entity;
 
+import org.example.order.DTO.OrderDTO;
+
 public class Order {
 
-    enum OrderStatus {결제_완료, 상품_준비_중, 배송_중, 배송_완료, 구매_확정, 환불_신청, 환불_환료, 교환_신청, 교환_완료}
+
     private int orderID;    //주문 번호
     private int userNum;    //고객 번호
     private int paymentID;  //주문 결제 번호
@@ -11,6 +13,23 @@ public class Order {
     private OrderStatus orderStatus;   //결제 상태
     private String storeName;   //판매자 이름
     private String storePhone;  //판매자 전화번호
+
+    public Order() {}
+
+    public Order(int orderID, int userNum, int paymentID, String orderName, String orderDate, OrderStatus orderStatus, String storeName, String storePhone) {
+        this.orderID = orderID;
+        this.userNum = userNum;
+        this.paymentID = paymentID;
+        this.orderName = orderName;
+        this.orderDate = orderDate;
+        this.orderStatus = orderStatus;
+        this.storeName = storeName;
+        this.storePhone = storePhone;
+    }
+
+    public OrderDTO toDTO() {
+        return new OrderDTO(orderID, userNum, paymentID, orderName, orderDate, orderStatus, storeName, storePhone);
+    }
 
     public int getOrderID() {
         return orderID;
