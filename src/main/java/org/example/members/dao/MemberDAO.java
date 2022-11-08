@@ -1,6 +1,6 @@
 package org.example.members.dao;
 
-import org.example.members.database.JDBCMgr;
+import org.example.database.JDBCMgr;
 import org.example.members.entity.Member;
 
 import java.sql.Connection;
