@@ -8,13 +8,13 @@ public class OrderVO {
     private int paymentID;  //주문 결제 번호
     private String orderName;   //상품 이름
     private String orderDate;   //주문 일자
-    private OrderStatus orderStatus;   //결제 상태
+    private String orderStatus;   //결제 상태
     private String storeName;   //판매자 이름
     private String storePhone;  //판매자 전화번호
 
     public OrderVO() {}
 
-    public OrderVO(int orderID, int userNum, int paymentID, String orderName, String orderDate, OrderStatus orderStatus, String storeName, String storePhone) {
+    public OrderVO(int orderID, int userNum, int paymentID, String orderName, String orderDate, String orderStatus, String storeName, String storePhone) {
         this.orderID = orderID;
         this.userNum = userNum;
         this.paymentID = paymentID;
