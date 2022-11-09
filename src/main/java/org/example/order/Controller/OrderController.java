@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 @RequestMapping("/naver")
 public class OrderController {
-    OrderService orderService;
+    OrderService orderService = new OrderService();
 
     //TODO : 네이버 페이 접근
     // 1. 로그인 확인
@@ -22,13 +22,23 @@ public class OrderController {
     // 2 - 2). 로그인 상태가 아니라면 로그인 페이지로 이동
 
     //TODO : 쇼핑 리스트 가져오기
-    @GetMapping("/getalllist") //URL 매핑
+    @GetMapping("/pay/order") //URL 매핑
     public String getAllList(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession(); //세션 불러오기
-        int userNum = (Integer) session.getAttribute("userNm");   //세션에서 userNum 받아오기
-        List<Order> orderList = orderService.getAllList(userNum);   //서비스 호출해서 값 받아오기
-        model.addAttribute("list", orderList);  //모델 생성해서 리스트 넣어주기
-        return "호출할 VIEW";   //View 호출하기
+
+        if(session.getAttribute("userNum") == null) {
+            System.out.println("error : session is null");
+            return "index";
+        }
+        else {
+            int userNum = (Integer) session.getAttribute("userNum");   //세션에서 userNum 받아오기
+            List<Order> orderList = orderService.getAllList(userNum);   //서비스 호출해서 값 받아오기
+            System.out.println(orderList.get(0).toString());
+            System.out.println("userNum : " + userNum);
+            model.addAttribute("list", orderList);  //모델 생성해서 리스트 넣어주기
+            return "payhome";   //View 호출하기
+        }
+
     }
 
     //TODO : 쇼핑 리스트 기간 검색(현재 날짜 기준 n일)
@@ -37,7 +47,7 @@ public class OrderController {
     public String gettermList(HttpServletRequest request, Model model) {
         HttpSession session = request.getSession(); //세션 불러오기
         int term = Integer.parseInt(request.getParameter("term"));  //클라이언트에게 들어온 기간 받아오기
-        int userNum = (Integer) session.getAttribute("userNm");   //세션에서 userNum 받아오기
+        int userNum = (Integer) session.getAttribute("userNum");   //세션에서 userNum 받아오기
         List<Order> orderList = orderService.getPeriodList(userNum, term);   //서비스 호출해서 값 받아오기
         model.addAttribute("list", orderList);  //모델 생성해서 리스트 넣어주기
         return "호출할 VIEW";   //View 호출하기
