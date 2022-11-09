@@ -11,8 +11,7 @@ public class JDBCMgr {
 
         try {
             DriverManager.registerDriver(new org.h2.Driver());
-
-            conn = DriverManager.getConnection("jdbc:h2:C:/workspace/naverpay-local/naverpay-clone-project/NaverPayDB;OLD_INFORMATION_SCHEMA=TRUE", "sa", "");
+            conn = DriverManager.getConnection("jdbc:h2:/Users/lee/KDT-FastCampus3/토이 프로젝트/naverpay-clone-project/NaverPayDB", "sa", "");
 
         } catch (SQLException e) {
             e.printStackTrace();
