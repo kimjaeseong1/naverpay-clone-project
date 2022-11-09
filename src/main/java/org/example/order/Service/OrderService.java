@@ -11,11 +11,13 @@ import java.util.List;
 @Service
 public class OrderService implements IOrderService{
     @Override
+    // 해당 유저의 모든 쇼핑 리스트를 가져옴
     public List<Order> getAllList(int userNum) {
         return OrderDAO.getInstance().getAllList(userNum);
     }
 
     @Override
+    // 해당 유저의 n일 간의 쇼핑 리스트를 가져옴
     public List<Order> getPeriodList(int userNum, int period) {
         Calendar calendar2 = Calendar.getInstance();
         Calendar calendar1 = Calendar.getInstance();
@@ -28,6 +30,7 @@ public class OrderService implements IOrderService{
     }
 
     @Override
+    // 해당 유저의 startdate부터 enddate까지의 쇼핑 리스트를 가져옴
     public List<Order> getPeriodList(int userNum, String startDate, String endDate) {
         return OrderDAO.getInstance().getPeriodList(userNum, startDate, endDate);
     }
