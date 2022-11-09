@@ -2,10 +2,13 @@ package org.example.order.Service;
 
 import org.example.order.DAO.OrderDAO;
 import org.example.order.Entity.Order;
+import org.springframework.stereotype.Service;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+@Service
 public class OrderService implements IOrderService{
     @Override
     public List<Order> getAllList(int userNum) {
