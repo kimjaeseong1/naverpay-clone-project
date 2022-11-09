@@ -53,7 +53,7 @@
             %>
             <tr>
                 <td class="ordername">
-                    <a href="localhots:8080/naver/pay/shopping/detail/?paymentId=<%=paymentID%>">
+                    <a href="/naver/pay/shopping/detail/?paymentId=<%=paymentID%>">
                         <em><%=orderName%></em>
                     </a>
 
