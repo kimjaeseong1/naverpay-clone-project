@@ -46,7 +46,7 @@
   <ul class="header__nav">
     <!-- block 구조여서 수직적 중앙이 맞음 -->
     <li><a href="/">Home</a></li>
-    <li><a href="/naver">Order</a></li>
+    <li><a href="/naver/pay/order">Order</a></li>
   </ul>
 
   <ul class="header__icons">
