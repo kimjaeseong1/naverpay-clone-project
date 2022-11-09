@@ -19,13 +19,13 @@ public class MemberDAO implements IMemberDAO{
     private PreparedStatement stmt = null;
     private ResultSet rs = null;
 
-    private static final String MEMBER_SEARCH = "select * from USERRINFO where USERID like ?";
-    private static final String MEMBER_SELECT = "select * from USERRINFO where USERID = ?";
-    private static final String MEMBER_SELECT_ALL = "select * from USERRINFO";
-    private static final String MEMBER_INSERT = "insert into USERRINFO values(?, ?, ?)";
-    private static final String MEMBER_PASSWORD_UPDATE = "update USERRINFO set USERPWD = ? where USERID = ?";
-    private static final String MEMBER_DELETE = "delete USERRINFO where USERID = ?";
-    private static final String MEMBER_DELETE_ALL = "delete USERRINFO";
+    private static final String MEMBER_SEARCH = "select * from USERINFO where USERID like ?";
+    private static final String MEMBER_SELECT = "select * from USERINFO where USERID = ?";
+    private static final String MEMBER_SELECT_ALL = "select * from USERINFO";
+    private static final String MEMBER_INSERT = "insert into USERINFO values(?, ?, ?)";
+    private static final String MEMBER_PASSWORD_UPDATE = "update USERINFO set USERPWD = ? where USERID = ?";
+    private static final String MEMBER_DELETE = "delete USERINFO where USERID = ?";
+    private static final String MEMBER_DELETE_ALL = "delete USERINFO";
 
     public static MemberDAO getInstance() {
         if (memberDAO == null) {
