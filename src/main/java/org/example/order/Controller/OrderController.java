@@ -33,10 +33,8 @@ public class OrderController {
         else {
             int userNum = (Integer) session.getAttribute("userNum");   //세션에서 userNum 받아오기
             List<Order> orderList = orderService.getAllList(userNum);   //서비스 호출해서 값 받아오기
-            System.out.println(orderList.get(0).toString());
-            System.out.println("userNum : " + userNum);
             model.addAttribute("list", orderList);  //모델 생성해서 리스트 넣어주기
-            return "payhome";   //View 호출하기
+            return "/order/paylist";   //View 호출하기
         }
 
     }
@@ -50,7 +48,7 @@ public class OrderController {
         int userNum = (Integer) session.getAttribute("userNum");   //세션에서 userNum 받아오기
         List<Order> orderList = orderService.getPeriodList(userNum, term);   //서비스 호출해서 값 받아오기
         model.addAttribute("list", orderList);  //모델 생성해서 리스트 넣어주기
-        return "호출할 VIEW";   //View 호출하기
+        return "/order/paylist";   //View 호출하기
     }
     // 1. 세션 불러오기
     // 2. 세션에서 userNum 받아오기
@@ -60,6 +58,16 @@ public class OrderController {
     // 6. View 호출하기
 
     //TODO : 쇼핑 리스트 기간 검색(시작 날짜와 끝나는 날짜 선택)
+    @GetMapping("/getperiodlist") //URL 매핑
+    public String getperiodList(HttpServletRequest request, Model model) {
+        HttpSession session = request.getSession(); //세션 불러오기
+        int userNum = (Integer) session.getAttribute("userNm");   //세션에서 userNum 받아오기
+        String startDate = request.getParameter("startDate");
+        String endDate = request.getParameter("endDate");
+        List<Order> orderList = orderService.getPeriodList(userNum, startDate, endDate);
+        model.addAttribute("list",orderList);
+        return "/order/paylist";
+    }
     // localhost:8080/naver/getperiodList/?startdate=2022-10-07&enddate=2022-10-13
     // 1. 세션 불러오기
     // 2. 세션에서 userNum 받아오기
