@@ -94,4 +94,18 @@ public class Order {
     public void setStorePhone(String storePhone) {
         this.storePhone = storePhone;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderID=" + orderID +
+                ", userNum=" + userNum +
+                ", paymentID=" + paymentID +
+                ", orderName='" + orderName + '\'' +
+                ", orderDate='" + orderDate + '\'' +
+                ", orderStatus='" + orderStatus + '\'' +
+                ", storeName='" + storeName + '\'' +
+                ", storePhone='" + storePhone + '\'' +
+                '}';
+    }
 }
