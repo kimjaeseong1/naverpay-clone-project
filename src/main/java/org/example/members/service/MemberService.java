@@ -42,6 +42,20 @@ public class MemberService implements IMemberService{
     }
 
     @Override
+    public boolean autoLogin(String autoLogin, String cookieId) {
+        if (autoLogin == null || cookieId == null) return false;
+
+        if (autoLogin.equals("true")) {
+            if (getByUserId(cookieId) != null) {
+                MemberDTO memberDTO = login(cookieId);
+                return memberDTO != null;
+            }
+        }
+
+        return false;
+    }
+
+    @Override
     public List<MemberDTO> findByUserId(String USERID) {
         if (USERID == null) return null;
 

@@ -230,4 +230,14 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+### Database ###
+*.accdb
+*.db
+*.dbf
+*.mdb
+*.pdb
+*.sqlite3
+*.db-shm
+*.db-wal
+
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij+all,maven,windows,macos,vim,git
