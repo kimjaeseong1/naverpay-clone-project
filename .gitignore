@@ -14,15 +14,8 @@
 ### Git ###
 # Created by git for backups. To disable backups in Git:
 # Created by git when using merge tools for conflicts
-*.BACKUP.*
-*.BASE.*
-*.LOCAL.*
-*.REMOTE.*
-*_BACKUP_*.txt
-*_BASE_*.txt
-*_LOCAL_*.txt
-*_REMOTE_*.txt
-=======
+
+
 # Created by https://www.toptal.com/developers/gitignore/api/java,intellij+all,maven,windows,macos,vim,git
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,intellij+all,maven,windows,macos,vim,git
 
@@ -246,5 +239,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/java,intellij,database,windows,macos,git
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij+all,maven,windows,macos,vim,git
