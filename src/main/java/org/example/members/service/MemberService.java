@@ -30,10 +30,9 @@ public class MemberService implements IMemberService{
 
     @Override
     public MemberDTO login(String USERID, String USERPWD) {
-        MemberDTO memberDTO = new MemberDTO(USERID,USERPWD);
-        if (memberDTO == null) return null;
+        Member member = memberDAO.select(USERID);
+        MemberDTO memberDTO = new MemberDTO(member.getUSERNUM(), USERID, USERPWD);
 
-        Member member = memberDAO.select(memberDTO.getUSERID());
         if (member == null || member.getUSERPWD() == null) return null;
         if (member.getUSERPWD().equals(memberDTO.getUSERPWD())) {
             return memberDTO;

@@ -28,7 +28,7 @@
 
             <div class="form__list">
                 <label for="USERPWD">PASSWORD: </label>
-                <input type="text" id="USERPWD" name="USERPWD" placeholder="INPUT YOUR PASSWORD" required/>
+                <input type="password" id="USERPWD" name="USERPWD" placeholder="INPUT YOUR PASSWORD" required/>
             </div>
 
             <div class="checkbox__form">
