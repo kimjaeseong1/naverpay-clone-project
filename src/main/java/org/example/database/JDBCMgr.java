@@ -1,6 +1,5 @@
 package org.example.database;
 
-
 import java.sql.*;
 
 public class JDBCMgr {
@@ -11,7 +10,7 @@ public class JDBCMgr {
 
         try {
             DriverManager.registerDriver(new org.h2.Driver());
-            conn = DriverManager.getConnection("jdbc:h2:/Users/lee/KDT-FastCampus3/토이 프로젝트/naverpay-clone-project/NaverPayDB", "sa", "");
+            conn = DriverManager.getConnection("jdbc:h2:C:/Users/AdmiN/Documents/dev/FAST_JAVA/naverpay-clone-project/NaverPayDB", "sa", "");
 
         } catch (SQLException e) {
             e.printStackTrace();
