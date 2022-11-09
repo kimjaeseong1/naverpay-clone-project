@@ -28,7 +28,7 @@ public class MemberDTO {
     }
 
     public Member toEntity() {
-        return new Member(USERNUM,USERID,USERPWD);
+        return new Member(USERID,USERPWD);
     }
 
     public MemberVO toVO() {

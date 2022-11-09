@@ -2,6 +2,7 @@ package org.example.members.dao;
 
 import org.example.database.JDBCMgr;
 import org.example.members.entity.Member;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,7 +11,7 @@ import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Repository
 public class MemberDAO implements IMemberDAO{
     private static MemberDAO memberDAO = null;
 
