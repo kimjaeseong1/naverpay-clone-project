@@ -72,7 +72,6 @@ public class LoginController {
             respStatus = Status.SUCCESS;
         }
 
-
         session.setAttribute("login",respStatus);
         session.setAttribute("userNum", memberDTO.getUSERNUM());
         model.addAttribute("USERID", session.getAttribute("SESSION_ID"));

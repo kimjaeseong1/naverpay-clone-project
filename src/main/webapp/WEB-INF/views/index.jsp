@@ -11,7 +11,7 @@
 <header><jsp:include page="layout/header.jsp"/></header>
 
 <main>
-  <h1>Hello</h1>
+  <a href="/members/login" class="myButton">NAVERPAY PROJECT</a>
 
 </main>
 <footer><jsp:include page="layout/footer.jsp"/></footer>
