@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Created by https://www.toptal.com/developers/gitignore/api/java,intellij,database,windows,macos,git
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,intellij,database,windows,macos,git
 
@@ -26,22 +25,12 @@
 =======
 # Created by https://www.toptal.com/developers/gitignore/api/java,intellij+all,maven,windows,macos,vim,git
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,intellij+all,maven,windows,macos,vim,git
->>>>>>> 020abdf338dacf6a58b8abf46f05a131a3ef1cbe
 
 ### Git ###
 # Created by git for backups. To disable backups in Git:
 # $ git config --global mergetool.keepBackup false
 *.orig
 
-# Created by git when using merge tools for conflicts
-*.BACKUP.*
-*.BASE.*
-*.LOCAL.*
-*.REMOTE.*
-*_BACKUP_*.txt
-*_BASE_*.txt
-*_LOCAL_*.txt
-*_REMOTE_*.txt
 
 ### Intellij+all ###
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
@@ -191,8 +180,6 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
-<<<<<<< HEAD
-=======
 ### Maven ###
 target/
 pom.xml.tag
@@ -233,7 +220,6 @@ tags
 # Persistent undo
 [._]*.un~
 
->>>>>>> 020abdf338dacf6a58b8abf46f05a131a3ef1cbe
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -260,8 +246,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-<<<<<<< HEAD
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij,database,windows,macos,git
-=======
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij+all,maven,windows,macos,vim,git
->>>>>>> 020abdf338dacf6a58b8abf46f05a131a3ef1cbe
