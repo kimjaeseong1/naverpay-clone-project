@@ -12,8 +12,5 @@
         <module name="spring-project-1" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="naverpay-clone-project" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>

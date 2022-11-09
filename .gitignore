@@ -1,5 +1,25 @@
+
+# Created by https://www.toptal.com/developers/gitignore/api/java,intellij,database,windows,macos,git
+# Edit at https://www.toptal.com/developers/gitignore?templates=java,intellij,database,windows,macos,git
+
+### Database ###
+*.accdb
+*.db
+*.dbf
+*.mdb
+*.pdb
+*.sqlite3
+*.db-shm
+*.db-wal
+
+### Git ###
+# Created by git for backups. To disable backups in Git:
+# Created by git when using merge tools for conflicts
+
+
 # Created by https://www.toptal.com/developers/gitignore/api/java,intellij+all,maven,windows,macos,vim,git
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,intellij+all,maven,windows,macos,vim,git
+
 
 ### Git ###
 # Created by git for backups. To disable backups in Git:
@@ -164,6 +184,7 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
+
 ### Maven ###
 target/
 pom.xml.tag
@@ -230,14 +251,12 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-### Database ###
-*.accdb
-*.db
-*.dbf
-*.mdb
-*.pdb
-*.sqlite3
-*.db-shm
-*.db-wal
 
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij+all,maven,windows,macos,vim,git
+
+
+# End of https://www.toptal.com/developers/gitignore/api/java,intellij,database,windows,macos,git
+
+# End of https://www.toptal.com/developers/gitignore/api/java,intellij+all,maven,windows,macos,vim,git
+
+
