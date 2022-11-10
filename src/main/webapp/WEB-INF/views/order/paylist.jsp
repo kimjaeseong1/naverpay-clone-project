@@ -28,6 +28,7 @@
 
         <table cellspacing="0" border="1" class="tb_list mgt">
             <caption>주문 목록</caption>
+
             <colgroup><col width=""><col width="140"><col width="200"><col width="80">
             </colgroup>
             <thead>
@@ -74,8 +75,14 @@
             <% } %>
             </tbody>
         </table>
-
-
+        <form action="/naver/pay/search/">
+            <a>
+                시작일 : <input type="date" name="startDate">
+                 ~
+                종료일 : <input type="date" name="endDate">
+                <button type="submit" name="searchbtn">조회</button>
+            </a>
+        </form>
     </div>
 </main>
 
