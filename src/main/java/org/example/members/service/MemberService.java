@@ -20,15 +20,6 @@ public class MemberService implements IMemberService{
     }
 
     @Override
-    public MemberDTO login(String USERID) {
-        MemberDTO memberDTO = new MemberDTO(USERID);
-        if (memberDTO == null) return null;
-
-        Member member = memberDAO.select(memberDTO.getUSERID());
-        return member.toDTO();
-    }
-
-    @Override
     public MemberDTO login(String USERID, String USERPWD) {
         Member member = memberDAO.select(USERID);
         if (member == null || member.getUSERPWD() == null) return null;
@@ -39,20 +30,6 @@ public class MemberService implements IMemberService{
             return memberDTO;
         }
         return null;
-    }
-
-    @Override
-    public boolean autoLogin(String autoLogin, String cookieId) {
-        if (autoLogin == null || cookieId == null) return false;
-
-        if (autoLogin.equals("true")) {
-            if (getByUserId(cookieId) != null) {
-                MemberDTO memberDTO = login(cookieId);
-                return memberDTO != null;
-            }
-        }
-
-        return false;
     }
 
     @Override
