@@ -25,7 +25,7 @@
 
         <table cellspacing="0" border="1" class="tb_list mgt">
             <caption>주문내역</caption>
-            <colgroup><col width=""><col width="140"><col width="200"><col width="100">
+            <colgroup><col width=""><col width="140"><col width="200">
             </colgroup><thead>
         <tr>
             <th scope="col">상품정보</th>
