@@ -67,13 +67,14 @@ public class LoginController {
             sessionMgr.create(session, USERID);
 
             saveCookieForAutoLogin(USERID,save,response);
-            
+
+            session.setAttribute("userNum", memberDTO.getUSERNUM());
             view = "redirect:/";
             respStatus = Status.SUCCESS;
         }
 
         session.setAttribute("login",respStatus);
-        session.setAttribute("userNum", memberDTO.getUSERNUM());
+
         model.addAttribute("USERID", session.getAttribute("SESSION_ID"));
         return view;
     }
