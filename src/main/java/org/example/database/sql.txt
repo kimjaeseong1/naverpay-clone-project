@@ -1,0 +1,26 @@
+-- 데이터 전체 조회
+select * from USERINFO;
+select * from ORDERINFO;
+select * from PAYMENTINFO;
+
+-- 데이터 초기화
+DELETE FROM ORDERINFO;
+DELETE FROM PAYMENTINFO;
+
+-- 데이터 삽입(테스트 케이스)
+
+-- PAYMENTINFO (결제 번호, 상품 가격, 배송비, 총 주문 금액, 결제 방식, 주문 수량)
+INSERT INTO PAYMENTINFO VALUES ( 1, 16000, 2500, 34500, '카드 결제', 2 );
+INSERT INTO PAYMENTINFO VALUES ( 2, 112000, 3000, 115000, '네이버 페이', 1 );
+INSERT INTO PAYMENTINFO VALUES ( 3, 187000, 2000, 189000, '무통장 입금', 1 );
+INSERT INTO PAYMENTINFO VALUES ( 4, 100000, 0, 100000, '카드 결제', 1 );
+INSERT INTO PAYMENTINFO VALUES ( 5, 5500, 2000, 18500, '카드 결제', 3 );
+INSERT INTO PAYMENTINFO VALUES ( 6, 238000, 1000, 239000, '네이버 페이', 1 );
+
+-- ORDERINFO (주문 번호, 유저 번호, 상품명, 주문일자, 결제 번호, 주문 상태, 판매자, 판매자 전화번호)
+INSERT INTO ORDERINFO VALUES ( 1, 1, '페퍼로니 피자', '2022-11-10', 1, '상품 준비 중', '잼스토어', '01012345678' );
+INSERT INTO ORDERINFO VALUES ( 2, 1, '로지텍 MX VERTICAL', '2022-11-01', 2, '환불 완료', '로지텍', '028787566' );
+INSERT INTO ORDERINFO VALUES ( 3, 2, 'VALETON GP-100', '2022-10-18', 3, '교환 신청', '사운드파이', '01050502678' );
+INSERT INTO ORDERINFO VALUES ( 4, 2, 'UR22 MK2', '2022-10-12', 4, '교환 완료', 'steinberg', '01044445678' );
+INSERT INTO ORDERINFO VALUES ( 5, 3, '필통', '2022-10-08', 5, '배송 중', '필필통', '01011111111' );
+INSERT INTO ORDERINFO VALUES ( 6, 3, '안경', '2022-09-16', 6, '결제 완료', '안생경민', '01012341234' );
