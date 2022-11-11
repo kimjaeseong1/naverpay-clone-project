@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="test" />
+        <module name="naverpay-clone-project" />
         <module name="spring-project-1" />
       </profile>
     </annotationProcessing>

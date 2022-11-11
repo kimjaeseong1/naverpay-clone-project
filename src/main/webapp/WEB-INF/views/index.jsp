@@ -1,16 +1,19 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: AdmiN
-  Date: 2022-10-28
-  Time: PM 4:15
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.time.LocalDateTime" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
 <html>
-  <head>
-    <title>SPRING</title>
-  </head>
-  <body>
-  ${now}
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>INDEX</title>
+  <link rel="stylesheet" href="/resources/css/style.css">
+</head>
+<body>
+<header><jsp:include page="layout/header.jsp"/></header>
+
+<main>
+  <a href="/members/login" class="myButton">NAVERPAY PROJECT</a>
+
+</main>
+<footer><jsp:include page="layout/footer.jsp"/></footer>
+</body>
 </html>
