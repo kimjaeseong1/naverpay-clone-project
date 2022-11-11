@@ -10,7 +10,6 @@ public interface IMemberDAO {
     List<Member> selectAll();
     int insert(Member member);
     int insertAll(List<Member> members);
-    int update(String USERID,String USERPWD);
     int delete(String USERID);
     int deleteAll();
 }

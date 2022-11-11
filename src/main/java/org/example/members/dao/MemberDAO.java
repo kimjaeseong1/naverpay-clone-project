@@ -23,7 +23,6 @@ public class MemberDAO implements IMemberDAO{
     private static final String MEMBER_SELECT = "select * from USERINFO where USERID = ?";
     private static final String MEMBER_SELECT_ALL = "select * from USERINFO";
     private static final String MEMBER_INSERT = "insert into USERINFO values(?, ?, ?)";
-    private static final String MEMBER_PASSWORD_UPDATE = "update USERINFO set USERPWD = ? where USERID = ?";
     private static final String MEMBER_DELETE = "delete USERINFO where USERID = ?";
     private static final String MEMBER_DELETE_ALL = "delete USERINFO";
 
@@ -130,23 +129,6 @@ public class MemberDAO implements IMemberDAO{
     @Override
     public int insertAll(List<Member> members) {
         return members.stream().map(m -> memberDAO.insert(m)).collect(Collectors.toList()).stream().reduce((x, y) -> x + y).orElse(0);
-    }
-
-    @Override
-    public int update(String USERID, String USERPWD) {
-        int res = 0;
-        try {
-            conn = JDBCMgr.getConnection();
-            stmt = conn.prepareStatement(MEMBER_PASSWORD_UPDATE);
-            stmt.setString(1, USERID);
-            stmt.setString(2, USERPWD);
-            res = stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            JDBCMgr.close(stmt, conn);
-        }
-        return res;
     }
 
     @Override
