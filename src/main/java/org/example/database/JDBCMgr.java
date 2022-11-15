@@ -10,7 +10,7 @@ public class JDBCMgr {
 
         try {
             DriverManager.registerDriver(new org.h2.Driver());
-            conn = DriverManager.getConnection("jdbc:h2:D:/Intellij/naverpay-clone-project/NaverPayDB", "sa", "");
+            conn = DriverManager.getConnection("jdbc:h2:C:/workspace/naverpay-local/naverpay-clone-project/NaverPayDB", "sa", "");
 
         } catch (SQLException e) {
             e.printStackTrace();

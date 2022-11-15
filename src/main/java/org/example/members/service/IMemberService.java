@@ -7,8 +7,6 @@ import java.util.List;
 public interface IMemberService {
     MemberDTO login(String USERID);
     MemberDTO login(String USERID, String USERPWD);
-
-
     boolean autoLogin(String autoLogin, String cookieId);
     List<MemberDTO> findByUserId(String USERID);
     MemberDTO getByUserId(String USERID);

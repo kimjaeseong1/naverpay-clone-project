@@ -7,7 +7,7 @@ public class MemberDAOTest {
 
     public void addMembers() {
         int res = memberDAO.deleteAll();
-//        if (res == 0) return;
+        if (res == 0) return;
 
         int count = 1;
         for (int i = 'a'; i <= 'z'; i++) {

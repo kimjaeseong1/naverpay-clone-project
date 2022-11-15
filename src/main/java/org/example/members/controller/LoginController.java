@@ -35,18 +35,15 @@ public class LoginController {
     public String loginPage(HttpServletRequest request, HttpSession session) {
         String view = "/members/login";
 
-        if (session.getAttribute("SESSION_ID") != null) {
+        if (session.getAttribute("SESSION_ID") != null) { //세션아이디 있으면 홈으로 이동
             return "redirect:/";
         }
 
-        String autoLogin = cookieMgr.get(request,"AUTO_LOGIN");
         String cookieId = cookieMgr.get(request,"COOKIE_ID");
 
-        if (autoLogin != null || cookieId != null) {
-            if (memberService.autoLogin(autoLogin, cookieId)) {
-                sessionMgr.create(session, cookieId);
-                view = "redirect:/";
-            }
+        if (cookieId != null) {
+            sessionMgr.create(session, cookieId);
+            view = "redirect:/";
         }
 
         return view;
@@ -55,35 +52,22 @@ public class LoginController {
     @PostMapping("/login")
     public String dologin (@RequestParam String USERID,
                            @RequestParam String USERPWD,
-                           @RequestParam(required = false) String save,
                            Model model, HttpServletRequest request,
                            HttpSession session,
                            HttpServletResponse response) {
         String view = loginPage(request, session);
         Status respStatus = Status.FAIL;
 
-        MemberDTO memberDTO = memberService.login(USERID, USERPWD);
-        if (memberDTO != null) {
-            sessionMgr.create(session, USERID);
-
-            saveCookieForAutoLogin(USERID,save,response);
-
-            session.setAttribute("userNum", memberDTO.getUSERNUM());
-            view = "redirect:/";
-            respStatus = Status.SUCCESS;
+        MemberDTO memberDTO = memberService.login(USERID, USERPWD); //로그인 시도
+        if (memberDTO != null) { //로그인 성공하면
+            sessionMgr.create(session, USERID); // 유저아이디를 value 값으로 세션 생성
+            session.setAttribute("userNum", memberDTO.getUSERNUM()); //userNum 전달 위해서 받아와서 세션에 저장
+            view = "redirect:/"; //홈으로 이동
+            respStatus = Status.SUCCESS; //로그인 성공으로 상태변경
         }
 
         session.setAttribute("login",respStatus);
-
         model.addAttribute("USERID", session.getAttribute("SESSION_ID"));
         return view;
-    }
-
-    private void saveCookieForAutoLogin(String USERID, String save, HttpServletResponse response) {
-        if (save == null) return;
-
-        if (save.equals("on")) {
-            cookieMgr.create(response, new String[] {USERID, "true"});
-        }
     }
 }
